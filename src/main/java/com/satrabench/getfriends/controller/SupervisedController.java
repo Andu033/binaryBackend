@@ -48,7 +48,7 @@ public class SupervisedController {
         return supervisedService.create(supervised);
     }
 
-    @GetMapping("/addProject")
+    @PostMapping("/addProject")
     public ResponseEntity<Object> projectToSupervised(@RequestParam Integer supervisedId, @RequestBody Project project ) {return supervisedService.projectToSupervised(supervisedId, project); }
 
 

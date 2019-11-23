@@ -2,48 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f9781301-d4d9-4327-af28-0a66604ea68f" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/satrabench/getfriends/controller/ProjectController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/satrabench/getfriends/model/Project.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/satrabench/getfriends/model/Task.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/satrabench/getfriends/repository/ProjectRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/satrabench/getfriends/service/ProjectService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/satrabench/getfriends/controller/IncidentController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/satrabench/getfriends/controller/SupervisedController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/satrabench/getfriends/model/Incident.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/satrabench/getfriends/model/Incident.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/satrabench/getfriends/model/Incident.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/satrabench/getfriends/model/Supervised.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/satrabench/getfriends/model/Location.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/satrabench/getfriends/model/Location.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/satrabench/getfriends/model/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/satrabench/getfriends/model/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/satrabench/getfriends/repository/IncidentRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/satrabench/getfriends/repository/SupervisedRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/satrabench/getfriends/service/IncidentService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/satrabench/getfriends/service/IncidentService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/satrabench/getfriends/service/IncidentService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/satrabench/getfriends/service/SupervisedService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/satrabench/getfriends/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/satrabench/getfriends/service/UserService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/META-INF/getfriends.kotlin_module" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/satrabench/getfriends/GetfriendsApplication.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/satrabench/getfriends/GetfriendsApplication.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/satrabench/getfriends/controller/IncidentController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/satrabench/getfriends/controller/IncidentController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/satrabench/getfriends/controller/IncidentController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/satrabench/getfriends/controller/UserController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/satrabench/getfriends/controller/UserController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/satrabench/getfriends/model/Incident$IncidentBuilder.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/satrabench/getfriends/model/Incident$IncidentBuilder.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/satrabench/getfriends/model/Incident$IncidentBuilder.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/satrabench/getfriends/model/Incident.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/satrabench/getfriends/model/Incident.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/satrabench/getfriends/model/Incident.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/satrabench/getfriends/model/Location$LocationBuilder.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/satrabench/getfriends/model/Location$LocationBuilder.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/satrabench/getfriends/model/Location.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/satrabench/getfriends/model/Location.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/satrabench/getfriends/model/User$UserBuilder.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/satrabench/getfriends/model/User$UserBuilder.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/satrabench/getfriends/model/User.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/satrabench/getfriends/model/User.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/satrabench/getfriends/repository/IncidentRepository.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/satrabench/getfriends/repository/IncidentRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/satrabench/getfriends/repository/IncidentRepository.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/satrabench/getfriends/repository/UserRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/satrabench/getfriends/repository/UserRepository.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/satrabench/getfriends/service/IncidentService.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/satrabench/getfriends/service/IncidentService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/satrabench/getfriends/service/IncidentService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/satrabench/getfriends/service/UserService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/satrabench/getfriends/service/UserService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/createdFiles.lst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/com/satrabench/getfriends/GetfriendsApplicationTests.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/com/satrabench/getfriends/GetfriendsApplicationTests.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/satrabench/getfriends/controller/SupervisedController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/satrabench/getfriends/controller/SupervisedController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/satrabench/getfriends/service/ProjectService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/satrabench/getfriends/service/ProjectService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/satrabench/getfriends/service/SupervisedService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/satrabench/getfriends/service/SupervisedService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/satrabench/getfriends/service/TaskService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/satrabench/getfriends/service/TaskService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/satrabench/getfriends/controller/SupervisedController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/satrabench/getfriends/controller/SupervisedController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/satrabench/getfriends/service/ProjectService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/satrabench/getfriends/service/ProjectService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/satrabench/getfriends/service/SupervisedService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/satrabench/getfriends/service/SupervisedService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/satrabench/getfriends/service/TaskService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/satrabench/getfriends/service/TaskService.class" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -76,6 +44,7 @@
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
     <property name="node.js.path.for.package.tslint" value="project" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
   </component>
   <component name="RunDashboard">
@@ -142,10 +111,22 @@
       <workItem from="1574282209614" duration="684000" />
       <workItem from="1574459306699" duration="176000" />
       <workItem from="1574519868897" duration="2857000" />
+      <workItem from="1574540758783" duration="3138000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
 </project>

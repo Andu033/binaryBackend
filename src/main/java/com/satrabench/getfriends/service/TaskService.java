@@ -1,7 +1,7 @@
 package com.satrabench.getfriends.service;
 
 import com.satrabench.getfriends.model.Task;
-import com.satrabench.getfriends.model.User;
+import com.satrabench.getfriends.repository.ProjectRepository;
 import com.satrabench.getfriends.repository.TaskRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -14,10 +14,12 @@ import java.util.List;
 public class TaskService {
 
     private final TaskRepository taskRepository;
+    private final ProjectRepository projectRepository;
 
     @Autowired
-    public TaskService(TaskRepository taskRepository) {
+    public TaskService(TaskRepository taskRepository, ProjectRepository projectRepository) {
         this.taskRepository = taskRepository;
+        this.projectRepository = projectRepository;
     }
 
     public ResponseEntity<Object> getAll(){
