@@ -23,33 +23,11 @@ public class User {
 	private String name;
 
 	private String password;
-
+	private boolean supervisor = true;
+	private boolean supervised = false;
 	@OneToMany(  mappedBy = "user",
 			cascade = CascadeType.PERSIST,
 			orphanRemoval = true)
-	private List<Incident> incidents = new ArrayList<>();
+	private List<Supervised> incidents = new ArrayList<>();
 
-	private boolean doctor;
-
-	private boolean admin=false;
-
-	private boolean banned=false;
-
-
-	@Lob
-	@Column( length = 100000 )
-	private String photo;
-
-	@Override
-	public String toString() {
-		return "User{" +
-				"Id=" + Id +
-				", name='" + name + '\'' +
-				", password='" + password + '\'' +
-				", incidents=" + incidents +
-				", doctor=" + doctor +
-				", admin=" + admin +
-				", banned=" + banned +
-				'}';
-	}
 }
