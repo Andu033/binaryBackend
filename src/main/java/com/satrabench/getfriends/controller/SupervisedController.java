@@ -44,7 +44,7 @@ public class SupervisedController {
     }
 
     @PostMapping("/create")
-    public ResponseEntity<Object> ban(@RequestBody Supervised supervised){
+    public ResponseEntity<Object> create(@RequestBody Supervised supervised){
         return supervisedService.create(supervised);
     }
 

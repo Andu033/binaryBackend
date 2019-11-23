@@ -34,7 +34,7 @@ public class ProjectController {
     @GetMapping("/project/completion")
     public ResponseEntity<Object>  completion(@RequestParam Integer id) {return projectService.completion(id); }
 
-    @GetMapping("/project/copletion")
+    @GetMapping("/project/taskForProject")
     public ResponseEntity<Object> taskForProject(@RequestBody Supervised supervised,@RequestParam Integer projectId,@RequestBody Task task) {return projectService.taskForProject(supervised,projectId,task); }
 
 }
