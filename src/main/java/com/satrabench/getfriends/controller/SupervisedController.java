@@ -27,26 +27,13 @@ public class SupervisedController {
         return supervisedService.getSupervised(id);
     }
 
-    @GetMapping("/invalidate")
-    public ResponseEntity<Object> invalidate(@RequestParam("id") int id){
-        return supervisedService.invalidate(id);
-    }
-
-    @GetMapping("/ongoing")
-    public ResponseEntity<Object> ongoing(@RequestParam("id") int id){
-        return supervisedService.ongoing(id);
-    }
-
-    @PostMapping("/addincident")
-    public ResponseEntity<Object> addIncident(@RequestBody Supervised incident,@RequestParam("id") int id){
-        return supervisedService.createSupervised(incident,id);
-    }
-
     @PostMapping("/create")
     public ResponseEntity<Object> ban(@RequestBody Supervised supervised){
         return supervisedService.create(supervised);
     }
 
-
-
+//    @GetMapping("/invite")
+//    public ResponseEntity<Object> invite(@RequestParam("id") int idSuper, @RequestParam("id") int idUser){
+//        return supervisedService.create(supervised);
+//    }
 }

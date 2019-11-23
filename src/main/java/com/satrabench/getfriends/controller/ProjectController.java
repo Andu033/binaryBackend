@@ -24,7 +24,7 @@ public class ProjectController {
         return projectService.getAll();
     }
 
-        @PostMapping("/project/create")
+    @PostMapping("/project/create")
     public ResponseEntity<Object> create(@RequestBody Project project){
         return projectService.create(project);
     }
@@ -33,9 +33,7 @@ public class ProjectController {
     public ResponseEntity<Object> calculateCompletedTasks(@RequestBody Project project) {return projectService.calculateCompletedTasks(project); }
 
     @GetMapping("/project/completion")
-    public ResponseEntity<Object>  completion(@RequestBody Project project) {return projectService.completion(project); }
-
-    //public ResponseEntity<Object> isDone(@RequestBody Project project) {return projectService.isDone(project); }
+    public ResponseEntity<Object> completion(@RequestBody Project project) {return projectService.completion(project); }
 
 
 }
