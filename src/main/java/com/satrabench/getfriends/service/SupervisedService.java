@@ -1,13 +1,18 @@
 package com.satrabench.getfriends.service;
 
 import com.satrabench.getfriends.model.Supervised;
+import com.satrabench.getfriends.model.Task;
 import com.satrabench.getfriends.model.User;
 import com.satrabench.getfriends.repository.SupervisedRepository;
 import com.satrabench.getfriends.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.jpa.repository.support.SimpleJpaRepository;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
+
+import java.util.ArrayList;
+import java.util.Optional;
 
 @Service
 public class SupervisedService {
@@ -55,6 +60,16 @@ public class SupervisedService {
     public ResponseEntity<Object> create(Supervised supervised){
        Supervised supervised1 = supervisedRepository.save(supervised);
         return new ResponseEntity<>(supervised1,HttpStatus.OK);
+    }
+
+    public ResponseEntity<Object> getAllTasks(int id) {
+        Supervised supervised = supervisedRepository.findById(id).get();
+        //ArrayList<Task> alltasks = new Arra...
+        //projects = supervised.getProjects();
+        //for (int i = 0; i < projects.size(); ++i)
+        //alltasks.addAll(projects.getTasks());
+        //sort allTasks
+        //return new ResponseEntity<>(allTatks,HttpStatus.Ogit K);
     }
 
 }

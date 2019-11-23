@@ -47,6 +47,9 @@ public class SupervisedController {
         return supervisedService.create(supervised);
     }
 
-
+    @PostMapping("/getAllTasks")
+    public ResponseEntity<Object> getAllTasks(@RequestParam("id") int id) {
+        return SupervisedService.getAllTasks(id);
+    }
 
 }

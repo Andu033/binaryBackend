@@ -8,6 +8,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
+import java.util.ArrayList;
 import java.util.Date;
 
 @Entity
@@ -37,6 +38,5 @@ public class Task {
     @JoinColumn(name = "project_id")
     @JsonIgnore
     private Project project;
-
 
 }
