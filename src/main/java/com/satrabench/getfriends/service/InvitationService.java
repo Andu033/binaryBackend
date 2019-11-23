@@ -29,8 +29,8 @@ public class InvitationService {
 
     public ResponseEntity<Object> create(int idSuper, int idUser) {
         Invitation i = invitationRepository.save(new Invitation(idSuper, idUser));
-        //User u = userRepository.findById(idUser).get();
-        //i.setUser(u);
+        User u = userRepository.findById(idUser);
+        i.setUser(u);
         invitationRepository.save(i);
 
         return new ResponseEntity<Object>(i, HttpStatus.OK);
