@@ -1,6 +1,7 @@
 package com.satrabench.getfriends.service;
 
 import com.satrabench.getfriends.model.Project;
+import com.satrabench.getfriends.model.Supervised;
 import com.satrabench.getfriends.model.Task;
 import com.satrabench.getfriends.model.User;
 import com.satrabench.getfriends.repository.ProjectRepository;
@@ -23,7 +24,7 @@ public class ProjectService {
     }
 
     public ResponseEntity<Object> getAll(){
-        List<Project> project =projectRepository.findAll();
+        List<Project> project = projectRepository.findAll();
         return new ResponseEntity<Object>(project, HttpStatus.OK);
     }
 
@@ -32,20 +33,34 @@ public class ProjectService {
         return new ResponseEntity<Object>(p, HttpStatus.OK);
     }
 
-    public ResponseEntity<Object> calculateCompletedTasks(Project project) {
+    public ResponseEntity<Object> calculateCompletedTasks(Integer id) {
         Integer completedTasks = 0;
+        Project project = projectRepository.findById(id).get();
         for (Task task : project.getProjects()) {
             if (task.isDone())
                 completedTasks++;
         }
+
+        if(completedTasks == project.getProjects().size()) {
+            project.setCompletion(100);
+        }
         return new ResponseEntity<Object>(completedTasks, HttpStatus.OK);
     }
 
-    public ResponseEntity<Object> completion(Project project) {
+    public ResponseEntity<Object> completion(Integer id) {
+        Project project = projectRepository.findById(id).get();
         Integer completion = 0;
-        completion = (project.getProjects().size() * 100) / project.getCompletedTasks();
+        if(project.getCompletedTasks() != 0) {
+            completion = (project.getProjects().size() * 100) / project.getCompletedTasks();
+        }
+
         return new ResponseEntity<Object>(completion, HttpStatus.OK);
     }
 
+        public ResponseEntity<Object> taskForProject(Supervised supervised, Integer projectId, Task task) {
+            Project project = projectRepository.findById(projectId).get();
+            project.getProjects().add(task);
+            return new ResponseEntity<Object>(task, HttpStatus.OK);
+        }
 
 }

@@ -1,5 +1,6 @@
 package com.satrabench.getfriends.service;
 
+import com.satrabench.getfriends.model.Project;
 import com.satrabench.getfriends.model.Supervised;
 import com.satrabench.getfriends.model.User;
 import com.satrabench.getfriends.repository.SupervisedRepository;
@@ -18,18 +19,18 @@ public class SupervisedService {
 
     @Autowired
     public SupervisedService(UserRepository userRepository,
-            SupervisedRepository incidentRepository) {
+            SupervisedRepository supervisedRepository) {
         this.userRepository = userRepository;
-        this.supervisedRepository = incidentRepository;
+        this.supervisedRepository = supervisedRepository;
     }
 
     public ResponseEntity<Object> createSupervised(Supervised supervised, int userId){
         User u = userRepository.findById(userId).get();
         supervised.setUser(u);
-        Supervised incident1 = supervisedRepository.save(supervised);
-        u.getIncidents().add(incident1);
+        Supervised supervised1 = supervisedRepository.save(supervised);
+        u.getIncidents().add(supervised1);
         userRepository.save(u);
-        return new ResponseEntity<>(incident1, HttpStatus.OK);
+        return new ResponseEntity<>(supervised1, HttpStatus.OK);
     }
 
     public ResponseEntity<Object> getSupervised(int id){
@@ -41,20 +42,26 @@ public class SupervisedService {
         return new ResponseEntity<>("ok", HttpStatus.OK);
     }
 
-    public ResponseEntity<Object> invalidate(int incidentId){
-        Supervised incident = supervisedRepository.findById(incidentId).get();
-        supervisedRepository.save(incident);
+    public ResponseEntity<Object> invalidate(int supervisedId){
+        Supervised supervised = supervisedRepository.findById(supervisedId).get();
+        supervisedRepository.save(supervised);
         return new ResponseEntity<>("saved",HttpStatus.OK);
     }
-    public ResponseEntity<Object> ongoing(int incidentId){
-        Supervised incident = supervisedRepository.findById(incidentId).get();
-        supervisedRepository.save(incident);
+    public ResponseEntity<Object> ongoing(int supervisedId){
+        Supervised supervised = supervisedRepository.findById(supervisedId).get();
+        supervisedRepository.save(supervised);
         return new ResponseEntity<>("saved",HttpStatus.OK);
     }
 
     public ResponseEntity<Object> create(Supervised supervised){
        Supervised supervised1 = supervisedRepository.save(supervised);
         return new ResponseEntity<>(supervised1,HttpStatus.OK);
+    }
+
+    public ResponseEntity<Object> projectToSupervised(Integer supervisedId, Project project) {
+        Supervised supervised = supervisedRepository.findById(supervisedId).get();
+        supervised.getProjects().add(project);
+        return new ResponseEntity<>(project,HttpStatus.OK);
     }
 
 }

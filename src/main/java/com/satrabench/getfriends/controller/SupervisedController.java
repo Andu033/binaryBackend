@@ -1,5 +1,6 @@
 package com.satrabench.getfriends.controller;
 
+import com.satrabench.getfriends.model.Project;
 import com.satrabench.getfriends.model.Supervised;
 import com.satrabench.getfriends.service.SupervisedService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -28,12 +29,10 @@ public class SupervisedController {
     }
 
     @PostMapping("/create")
-    public ResponseEntity<Object> ban(@RequestBody Supervised supervised){
+    public ResponseEntity<Object> create(@RequestBody Supervised supervised){
         return supervisedService.create(supervised);
     }
+    @GetMapping("/addProject")
+    public ResponseEntity<Object> projectToSupervised(@RequestParam Integer supervisedId, @RequestBody Project project ) {return supervisedService.projectToSupervised(supervisedId, project); }
 
-//    @GetMapping("/invite")
-//    public ResponseEntity<Object> invite(@RequestParam("id") int idSuper, @RequestParam("id") int idUser){
-//        return supervisedService.create(supervised);
-//    }
 }
