@@ -29,10 +29,20 @@ public class InvitationService {
 
     public ResponseEntity<Object> create(int idSuper, int idUser) {
         Invitation i = invitationRepository.save(new Invitation(idSuper, idUser));
-        User u = userRepository.findById(idUser).get();
-        i.setUser(u);
+        //User u = userRepository.findById(idUser).get();
+        //i.setUser(u);
         invitationRepository.save(i);
 
+        return new ResponseEntity<Object>(i, HttpStatus.OK);
+    }
+
+    public ResponseEntity<Object> accept(int idInvitation) {
+        Invitation i = invitationRepository.findById(idInvitation);
+        i.setStatus("accepted");
+        User u = userRepository.findById(i.getIdUser());
+
+        //u.setIncidents();
+        //u.setIncidents(u.getIncidents().add());
         return new ResponseEntity<Object>(i, HttpStatus.OK);
     }
 }
