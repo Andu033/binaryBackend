@@ -29,7 +29,12 @@ public class InvitationController {
     }
 
     @GetMapping("/invite/accept")
-    public ResponseEntity<Object> authentication(@RequestParam(required=false) Integer idInvitation ) {
+    public ResponseEntity<Object> accept(@RequestParam(required=false) Integer idInvitation ) {
+        return invitationService.accept(idInvitation);
+    }
+
+    @GetMapping("/invite/deny")
+    public ResponseEntity<Object> deny(@RequestParam(required=false) Integer idInvitation ) {
         return invitationService.accept(idInvitation);
     }
 }

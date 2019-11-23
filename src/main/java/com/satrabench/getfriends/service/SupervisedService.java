@@ -26,13 +26,8 @@ public class SupervisedService {
         this.supervisedRepository = supervisedRepository;
     }
 
-<<<<<<< HEAD
-    public ResponseEntity<Object> createSupervised(Supervised supervised, int userId){
-        User u = userRepository.findById(userId);
-=======
     public ResponseEntity<Object> createSupervised(Supervised supervised, int userId) {
-        User u = userRepository.findById(userId).get();
->>>>>>> 212c99e5fe5e28f6247afadcfa09327cf61c17ce
+        User u = userRepository.findById(userId);
         supervised.setUser(u);
         Supervised supervised1 = supervisedRepository.save(supervised);
         u.getIncidents().add(supervised1);
