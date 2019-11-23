@@ -15,14 +15,13 @@ import java.util.List;
 public class UserService {
 	private final UserRepository userRepository;
 	private final SupervisedRepository supervisedRepository;
+
     @Autowired
 	public UserService(UserRepository userRepository,
 		    SupervisedRepository supervisedRepository) {
 		this.userRepository = userRepository;
 	    this.supervisedRepository = supervisedRepository;
     }
-
-
 
 	public ResponseEntity<Object> getAll(){
     	List<User> users = userRepository.findAll();

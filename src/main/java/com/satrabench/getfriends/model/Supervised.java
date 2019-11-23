@@ -23,7 +23,6 @@ import javax.persistence.Table;
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
-@Table(name = "incident")
 public class Supervised {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
