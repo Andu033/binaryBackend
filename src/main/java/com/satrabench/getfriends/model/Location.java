@@ -11,7 +11,6 @@ import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.MapsId;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
@@ -34,5 +33,5 @@ public class Location {
 
     @OneToOne(fetch = FetchType.EAGER)
     @JsonIgnore
-    private Incident incident;
+    private Supervised incident;
 }

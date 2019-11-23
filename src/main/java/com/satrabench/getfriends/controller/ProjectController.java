@@ -1,8 +1,7 @@
 package com.satrabench.getfriends.controller;
 
-import com.satrabench.getfriends.model.User;
+import com.satrabench.getfriends.model.Project;
 import com.satrabench.getfriends.service.ProjectService;
-import com.satrabench.getfriends.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -19,20 +18,24 @@ public class ProjectController {
     public ProjectController(ProjectService projectService) {
         this.projectService = projectService;
     }
+
     @GetMapping("/project")
     public ResponseEntity<Object> getAll(){
         return projectService.getAll();
     }
+
     @PostMapping("/project/create")
-    public ResponseEntity<Object> create(@RequestBody User user){
+    public ResponseEntity<Object> create(@RequestBody Project project){
         return projectService.create(project);
     }
 
-    public ResponseEntity<Object> calculateCompletedTasks() {return projectService.calculateCompletedTasks(); }
+    @GetMapping("/project/completed")
+    public ResponseEntity<Object> calculateCompletedTasks(@RequestBody Project project) {return projectService.calculateCompletedTasks(project); }
 
-    public ResponseEntity<Object>  completion() {return projectService.completion(); }
+    @GetMapping("/project/completion")
+    public ResponseEntity<Object>  completion(@RequestBody Project project) {return projectService.completion(project); }
 
-    public ResponseEntity<Object> isDone() {return projectService.isDone(); }
+    //public ResponseEntity<Object> isDone(@RequestBody Project project) {return projectService.isDone(project); }
 
 
 }

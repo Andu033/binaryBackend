@@ -25,23 +25,21 @@ import javax.persistence.Table;
 @NoArgsConstructor
 @Builder
 @Table(name = "incident")
-public class Incident {
+public class Supervised {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "id")
     int id;
 
-    @OneToOne(fetch = FetchType.EAGER)
-    @MapsId
-    private Location location;
-    private boolean active = true;
     private String name;
+
+    private String password;
+    private boolean supervised = true;
+    private boolean supervisor = false;
+
     @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "user_id")
     @JsonIgnore
     private User user;
-    private boolean help=false;
-
-
 
 }
