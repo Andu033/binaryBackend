@@ -1,8 +1,10 @@
 package com.satrabench.getfriends.service;
 
 import com.satrabench.getfriends.model.Invitation;
+import com.satrabench.getfriends.model.Supervised;
 import com.satrabench.getfriends.model.User;
 import com.satrabench.getfriends.repository.InvitationRepository;
+import com.satrabench.getfriends.repository.SupervisedRepository;
 import com.satrabench.getfriends.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -16,10 +18,13 @@ public class InvitationService {
 
     private final InvitationRepository invitationRepository;
     private final UserRepository userRepository;
+    private final SupervisedRepository supervisedRepository;
+
     @Autowired
-    public InvitationService(InvitationRepository invitationRepository, UserRepository userRepository) {
+    public InvitationService(InvitationRepository invitationRepository, UserRepository userRepository, SupervisedRepository supervisedRepository) {
         this.invitationRepository = invitationRepository;
         this.userRepository = userRepository;
+        this.supervisedRepository = supervisedRepository;
     }
 
     public ResponseEntity<Object> getAll(){
@@ -36,13 +41,18 @@ public class InvitationService {
         return new ResponseEntity<Object>(i, HttpStatus.OK);
     }
 
-    public ResponseEntity<Object> accept(int idInvitation) {
-        Invitation i = invitationRepository.findById(idInvitation);
+    public ResponseEntity<Object> accept(Integer idInvitation) {
+        Invitation i = invitationRepository.findById(idInvitation).get();
         i.setStatus("accepted");
-        User u = userRepository.findById(i.getIdUser());
 
-        //u.setIncidents();
-        //u.setIncidents(u.getIncidents().add());
+        User user = userRepository.findById(i.getIdUser()); //supervised to user
+        Supervised supervised = supervisedRepository.findById(i.getIdSuper()).get();
+
+        supervised.setUser(user);
+        Supervised supervised1 = supervisedRepository.save(supervised);
+        user.getIncidents().add(supervised1);
+        userRepository.save(user);
+
         return new ResponseEntity<Object>(i, HttpStatus.OK);
     }
 }

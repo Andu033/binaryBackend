@@ -27,4 +27,9 @@ public class InvitationController {
     public ResponseEntity<Object> create(@RequestParam int idSuper, @RequestParam int idUser){
         return invitationService.create(idSuper, idUser);
     }
+
+    @GetMapping("/invite/accept")
+    public ResponseEntity<Object> authentication(@RequestParam(required=false) Integer idInvitation ) {
+        return invitationService.accept(idInvitation);
+    }
 }
