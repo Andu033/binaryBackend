@@ -2,16 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f9781301-d4d9-4327-af28-0a66604ea68f" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/satrabench/getfriends/controller/SupervisedController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/satrabench/getfriends/controller/SupervisedController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/satrabench/getfriends/service/ProjectService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/satrabench/getfriends/service/ProjectService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/satrabench/getfriends/service/SupervisedService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/satrabench/getfriends/service/SupervisedService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/satrabench/getfriends/service/TaskService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/satrabench/getfriends/service/TaskService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/satrabench/getfriends/controller/SupervisedController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/satrabench/getfriends/controller/SupervisedController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/satrabench/getfriends/service/ProjectService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/satrabench/getfriends/service/ProjectService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/satrabench/getfriends/service/SupervisedService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/satrabench/getfriends/service/SupervisedService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/satrabench/getfriends/service/TaskService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/satrabench/getfriends/service/TaskService.class" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -111,7 +102,7 @@
       <workItem from="1574282209614" duration="684000" />
       <workItem from="1574459306699" duration="176000" />
       <workItem from="1574519868897" duration="2857000" />
-      <workItem from="1574540758783" duration="3138000" />
+      <workItem from="1574540758783" duration="5119000" />
     </task>
     <servers />
   </component>
