@@ -2,17 +2,25 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f9781301-d4d9-4327-af28-0a66604ea68f" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/dictionaries/cosmin.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/satrabench/getfriends/controller/ProjectController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/satrabench/getfriends/controller/ProjectController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/satrabench/getfriends/controller/SupervisedController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/satrabench/getfriends/controller/SupervisedController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/satrabench/getfriends/model/Project.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/satrabench/getfriends/model/Project.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/satrabench/getfriends/model/Supervised.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/satrabench/getfriends/model/Supervised.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/satrabench/getfriends/model/Task.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/satrabench/getfriends/model/Task.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/satrabench/getfriends/service/ProjectService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/satrabench/getfriends/service/ProjectService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/satrabench/getfriends/service/SupervisedService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/satrabench/getfriends/service/SupervisedService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/satrabench/getfriends/GetfriendsApplication.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/satrabench/getfriends/GetfriendsApplication.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/satrabench/getfriends/model/Location$LocationBuilder.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/satrabench/getfriends/model/Location$LocationBuilder.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/satrabench/getfriends/model/Location.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/satrabench/getfriends/model/Location.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/com/satrabench/getfriends/GetfriendsApplicationTests.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/com/satrabench/getfriends/GetfriendsApplicationTests.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/satrabench/getfriends/controller/ProjectController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/satrabench/getfriends/controller/ProjectController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/satrabench/getfriends/controller/SupervisedController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/satrabench/getfriends/controller/SupervisedController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/satrabench/getfriends/model/Project$ProjectBuilder.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/satrabench/getfriends/model/Project$ProjectBuilder.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/satrabench/getfriends/model/Project.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/satrabench/getfriends/model/Project.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/satrabench/getfriends/model/Supervised$SupervisedBuilder.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/satrabench/getfriends/model/Supervised$SupervisedBuilder.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/satrabench/getfriends/model/Supervised.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/satrabench/getfriends/model/Supervised.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/satrabench/getfriends/model/Task$TaskBuilder.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/satrabench/getfriends/model/Task$TaskBuilder.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/satrabench/getfriends/model/Task.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/satrabench/getfriends/model/Task.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/satrabench/getfriends/service/ProjectService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/satrabench/getfriends/service/ProjectService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/satrabench/getfriends/service/SupervisedService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/satrabench/getfriends/service/SupervisedService.class" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
