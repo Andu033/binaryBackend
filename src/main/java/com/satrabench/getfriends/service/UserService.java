@@ -21,7 +21,7 @@ public class UserService {
 	}
 
 	public ResponseEntity<Object> getAll(){
-    	List<User> users =userRepository.findAll();
+    	List<User> users = userRepository.findAll();
 		return new ResponseEntity<Object>(users, HttpStatus.OK);
 }
 

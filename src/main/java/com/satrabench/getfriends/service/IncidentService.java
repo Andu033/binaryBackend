@@ -12,7 +12,6 @@ import org.springframework.stereotype.Service;
 @Service
 public class IncidentService {
 
-
     private final UserRepository userRepository;
 
     private final IncidentRepository incidentRepository;
