@@ -1,13 +1,12 @@
 package com.satrabench.getfriends.controller;
 
 import com.satrabench.getfriends.model.Project;
+import com.satrabench.getfriends.model.Supervised;
+import com.satrabench.getfriends.model.Task;
 import com.satrabench.getfriends.service.ProjectService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 public class ProjectController {
@@ -24,18 +23,18 @@ public class ProjectController {
         return projectService.getAll();
     }
 
-        @PostMapping("/project/create")
+    @PostMapping("/project/create")
     public ResponseEntity<Object> create(@RequestBody Project project){
         return projectService.create(project);
     }
 
     @GetMapping("/project/completed")
-    public ResponseEntity<Object> calculateCompletedTasks(@RequestBody Project project) {return projectService.calculateCompletedTasks(project); }
+    public ResponseEntity<Object> calculateCompletedTasks(@RequestParam Integer id) {return projectService.calculateCompletedTasks(id); }
 
     @GetMapping("/project/completion")
-    public ResponseEntity<Object>  completion(@RequestBody Project project) {return projectService.completion(project); }
+    public ResponseEntity<Object>  completion(@RequestParam Integer id) {return projectService.completion(id); }
 
-    //public ResponseEntity<Object> isDone(@RequestBody Project project) {return projectService.isDone(project); }
-
+    @GetMapping("/project/copletion")
+    public ResponseEntity<Object> taskForProject(@RequestBody Supervised supervised,@RequestParam Integer projectId,@RequestBody Task task) {return projectService.taskForProject(supervised,projectId,task); }
 
 }

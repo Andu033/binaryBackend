@@ -1,6 +1,7 @@
 package com.satrabench.getfriends.model;
 
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -31,6 +32,10 @@ public class Project {
     private int completion;
     private boolean isDone;
     private int completedTasks;
+    @ManyToOne(fetch = FetchType.EAGER)
+    @JoinColumn(name = "supervised")
+    @JsonIgnore
+    private Supervised supervised;
 
     public boolean isDone(Project project) {
         return project.completion == 100;
