@@ -12,7 +12,6 @@ import org.springframework.stereotype.Service;
 @Service
 public class SupervisedService {
 
-
     private final UserRepository userRepository;
 
     private final SupervisedRepository supervisedRepository;
@@ -24,10 +23,10 @@ public class SupervisedService {
         this.supervisedRepository = incidentRepository;
     }
 
-    public ResponseEntity<Object> createSupervised(Supervised incident, int userId){
+    public ResponseEntity<Object> createSupervised(Supervised supervised, int userId){
         User u = userRepository.findById(userId).get();
-        incident.setUser(u);
-        Supervised incident1 = supervisedRepository.save(incident);
+        supervised.setUser(u);
+        Supervised incident1 = supervisedRepository.save(supervised);
         u.getIncidents().add(incident1);
         userRepository.save(u);
         return new ResponseEntity<>(incident1, HttpStatus.OK);

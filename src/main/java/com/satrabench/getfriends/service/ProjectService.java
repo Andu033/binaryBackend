@@ -1,13 +1,13 @@
 package com.satrabench.getfriends.service;
 
 import com.satrabench.getfriends.model.Project;
+import com.satrabench.getfriends.model.Task;
 import com.satrabench.getfriends.model.User;
 import com.satrabench.getfriends.repository.ProjectRepository;
 import com.satrabench.getfriends.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.scheduling.config.Task;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -34,16 +34,16 @@ public class ProjectService {
 
     public ResponseEntity<Object> calculateCompletedTasks(Project project) {
         Integer completedTasks = 0;
-        /*for (Task task : project.getProject()) {
-            if (task.isDone() == 1)
+        for (Task task : project.getProjects()) {
+            if (task.isDone())
                 completedTasks++;
-        }*/
-        return new ResponseEntity<Object>(5, HttpStatus.OK);
+        }
+        return new ResponseEntity<Object>(completedTasks, HttpStatus.OK);
     }
 
     public ResponseEntity<Object> completion(Project project) {
         Integer completion = 0;
-        completion = (project.getProject().size() * 100) / project.getCompletedTasks();
+        completion = (project.getProjects().size() * 100) / project.getCompletedTasks();
         return new ResponseEntity<Object>(completion, HttpStatus.OK);
     }
 

@@ -15,6 +15,7 @@ import java.util.List;
 public class UserService {
 	private final UserRepository userRepository;
 	private final SupervisedRepository supervisedRepository;
+
     @Autowired
 	public UserService(UserRepository userRepository,
 		    SupervisedRepository supervisedRepository) {
@@ -22,10 +23,8 @@ public class UserService {
 	    this.supervisedRepository = supervisedRepository;
     }
 
-
-
 	public ResponseEntity<Object> getAll(){
-    	List<User> users =userRepository.findAll();
+    	List<User> users = userRepository.findAll();
 		return new ResponseEntity<Object>(users, HttpStatus.OK);
 }
 

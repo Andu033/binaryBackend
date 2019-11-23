@@ -25,7 +25,7 @@ public class User {
 	private String password;
 	private boolean supervisor = true;
 	private boolean supervised = false;
-	@OneToMany(  mappedBy = "user",
+	@OneToMany(mappedBy = "user",
 			cascade = CascadeType.PERSIST,
 			orphanRemoval = true)
 	private List<Supervised> incidents = new ArrayList<>();

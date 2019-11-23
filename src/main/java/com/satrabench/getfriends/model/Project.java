@@ -21,9 +21,10 @@ public class Project {
     @Column(name = "id")
     int id;
 
-    @ElementCollection
-    @OneToMany(mappedBy = "project")
-    private List<String> project = new ArrayList<>(); //TASK IN LOC DE STRING
+    @OneToMany(mappedBy = "project",
+            cascade = CascadeType.PERSIST,
+            orphanRemoval = true)
+    private List<Task> projects = new ArrayList<Task>(); //TASK IN LOC DE STRING
 
     private String name;
     private String description;
@@ -32,8 +33,6 @@ public class Project {
     private int completedTasks;
 
     public boolean isDone(Project project) {
-        if (project.completion== 100)
-            return true;
-        return false;
+        return project.completion == 100;
     }
 }

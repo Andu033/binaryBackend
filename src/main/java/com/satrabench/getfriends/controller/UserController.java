@@ -21,10 +21,12 @@ public class UserController {
 	public UserController(UserService userService) {
 		this.userService = userService;
 	}
+
 	@GetMapping("/users")
 	public ResponseEntity<Object> getAll(){
 		return userService.getAll();
 	}
+
 	@PostMapping("/users/create")
 	public ResponseEntity<Object> create(@RequestBody User user){
 		return userService.create(user);
