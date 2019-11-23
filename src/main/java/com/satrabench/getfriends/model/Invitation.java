@@ -8,41 +8,29 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
-import java.text.SimpleDateFormat;
 import java.util.ArrayList;
-import java.util.Comparator;
-import java.util.Date;
+import java.util.List;
 
 @Entity
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
-@Table(name = "tasks")
-public class Task {
+public class Invitation {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "id")
-    private int Id;
+    int id;
 
-    private String name;
-
-    private String description;
-
-    private boolean isDone;
-
-    @Lob
-    @Column( length = 100000 )
-    private String photo;
-
-
-    private Date deadline;
-
-
-
+    private String status = "pending";
+    private int idSuper;
+    private int idUser;
     @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "project_id")
     @JsonIgnore
-    private Project project;
-
+    private User user;
+    public Invitation(int idSuper, int idUser) {
+        this.idSuper = idSuper;
+        this.idUser = idUser;
+    }
 }

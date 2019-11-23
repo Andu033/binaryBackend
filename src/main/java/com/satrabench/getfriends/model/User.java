@@ -30,4 +30,14 @@ public class User {
 			orphanRemoval = true)
 	private List<Supervised> incidents = new ArrayList<>();
 
+	@Lob
+	@Column( length = 100000 )
+	private String photo;
+
+	@OneToMany(mappedBy = "user",
+			cascade = CascadeType.PERSIST,
+			orphanRemoval = true)
+	private List<Invitation> invitations = new ArrayList<>();
+
+
 }
