@@ -54,8 +54,6 @@ public class ProjectService {
         if(project.getCompletedTasks() != 0) {
             completion = (project.getProjects().size() * 100) / project.getCompletedTasks();
         }
-        //if(completion == 100) {
-        //}
 
         return new ResponseEntity<Object>(completion, HttpStatus.OK);
     }

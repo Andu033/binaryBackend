@@ -17,14 +17,17 @@ import org.springframework.web.bind.annotation.RestController;
 public class SupervisedController {
 
     private final SupervisedService supervisedService;
+    private final SupervisedService userService;
 
     @Autowired
-    public SupervisedController(SupervisedService supervisedService) {
+    public SupervisedController(SupervisedService supervisedService, SupervisedService userService) {
         this.supervisedService = supervisedService;
+        this.userService = userService;
     }
 
     @GetMapping("/getsupervised")
     public ResponseEntity<Object> getOpen(@RequestParam("id") int id){
+
         return supervisedService.getSupervised(id);
     }
 
@@ -35,14 +38,23 @@ public class SupervisedController {
 
     @PostMapping("/getAllTasks")
     public ResponseEntity<Object> getAllTasks(@RequestParam("id") int id) {
-       return supervisedService.getAllTasks(id);
+
+        return supervisedService.getAllTasks(id);
     }
 
     @GetMapping("/addProject")
-    public ResponseEntity<Object> projectToSupervised(@RequestParam Integer supervisedId, @RequestBody Project project ) {return supervisedService.projectToSupervised(supervisedId, project); }
+    public ResponseEntity<Object> projectToSupervised(@RequestParam Integer supervisedId, @RequestBody Project project ) {
+        return supervisedService.projectToSupervised(supervisedId, project);
+    }
 
     @PostMapping("/addBlacklist")
     public ResponseEntity<Object> addBlacklist(@RequestParam Integer id, @RequestParam String siteName) {
         return supervisedService.addBlacklist(id, siteName);
     }
+
+    @GetMapping("/getAllInvites")
+    public ResponseEntity<Object> getAllInvites(@RequestParam Integer supervisedId) {
+        return supervisedService.getAllInvites(supervisedId);
+    }
+
 }

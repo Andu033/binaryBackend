@@ -72,6 +72,12 @@ public class SupervisedService {
         return new ResponseEntity<>(project,HttpStatus.OK);
     }
 
+    public ResponseEntity<Object> getAllInvites(Integer supervisedId) {
+        User u = userRepository.findById(supervisedId).get();
+        List<Invitation> invites = u.getInvitations();
+        return new ResponseEntity<Object>(invites, HttpStatus.OK);
+    }
+
     //comparator for deadlines
     public static class Sortbydeadline implements Comparator<Task> {
         public int compare(Task a, Task b) {

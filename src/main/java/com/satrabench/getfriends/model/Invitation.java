@@ -21,6 +21,7 @@ public class Invitation {
     int id;
 
     private String status = "pending";
+    private String name;
     private int idSuper;
     private int idUser;
 
