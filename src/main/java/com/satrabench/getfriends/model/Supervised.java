@@ -26,16 +26,20 @@ public class Supervised {
     private String password;
     private boolean supervised = true;
     private boolean supervisor = false;
+
     @OneToMany(mappedBy = "supervised",
             cascade = CascadeType.PERSIST,
             orphanRemoval = true)
     private List<Project> projects = new ArrayList<Project>();
 
-
-
     @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "user_id")
     @JsonIgnore
     private User user;
+
+    @OneToMany(mappedBy = "user",
+            cascade = CascadeType.PERSIST,
+            orphanRemoval = true)
+    private List<BlackSite> blackSiteList = new ArrayList<>();
 
 }

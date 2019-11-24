@@ -7,5 +7,6 @@ import org.springframework.stereotype.Repository;
 @Repository
 public interface SupervisedRepository extends JpaRepository<Supervised, Integer> {
     Supervised findByNameAndPassword(String user, String password);
+    Supervised findById(int id);
 
 }
