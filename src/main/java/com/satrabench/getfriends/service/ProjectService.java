@@ -3,9 +3,8 @@ package com.satrabench.getfriends.service;
 import com.satrabench.getfriends.model.Project;
 import com.satrabench.getfriends.model.Supervised;
 import com.satrabench.getfriends.model.Task;
-import com.satrabench.getfriends.model.User;
 import com.satrabench.getfriends.repository.ProjectRepository;
-import com.satrabench.getfriends.repository.UserRepository;
+import com.satrabench.getfriends.repository.TaskRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -17,10 +16,12 @@ import java.util.List;
 public class ProjectService {
 
     private final ProjectRepository projectRepository;
+    private final TaskRepository taskRepository;
 
     @Autowired
-    public ProjectService(ProjectRepository projectRepository) {
+    public ProjectService(ProjectRepository projectRepository, TaskRepository taskRepository) {
         this.projectRepository = projectRepository;
+        this.taskRepository = taskRepository;
     }
 
     public ResponseEntity<Object> getAll(){
@@ -53,13 +54,18 @@ public class ProjectService {
         if(project.getCompletedTasks() != 0) {
             completion = (project.getProjects().size() * 100) / project.getCompletedTasks();
         }
+        //if(completion == 100) {
+        //}
 
         return new ResponseEntity<Object>(completion, HttpStatus.OK);
     }
 
         public ResponseEntity<Object> taskForProject(Supervised supervised, Integer projectId, Task task) {
             Project project = projectRepository.findById(projectId).get();
-            project.getProjects().add(task);
+            task.setProject(project);
+            Task task1 = taskRepository.save(task);
+            project.getProjects().add(task1);
+            projectRepository.save(project);
             return new ResponseEntity<Object>(task, HttpStatus.OK);
         }
 

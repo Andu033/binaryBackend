@@ -1,5 +1,10 @@
 package com.satrabench.getfriends.service;
 
+import com.satrabench.getfriends.model.Project;
+import com.satrabench.getfriends.model.Supervised;
+import com.satrabench.getfriends.model.User;
+import com.satrabench.getfriends.repository.ProjectRepository;
+
 import com.satrabench.getfriends.model.*;
 import com.satrabench.getfriends.repository.SupervisedRepository;
 import com.satrabench.getfriends.repository.UserRepository;
@@ -18,12 +23,13 @@ public class SupervisedService {
     private final UserRepository userRepository;
 
     private final SupervisedRepository supervisedRepository;
-
+    private final ProjectRepository projectRepository;
     @Autowired
     public SupervisedService(UserRepository userRepository,
-                             SupervisedRepository supervisedRepository) {
+                             SupervisedRepository supervisedRepository, ProjectRepository projectRepository) {
         this.userRepository = userRepository;
         this.supervisedRepository = supervisedRepository;
+        this.projectRepository = projectRepository;
     }
 
     public ResponseEntity<Object> createSupervised(Supervised supervised, int userId) {
@@ -58,8 +64,12 @@ public class SupervisedService {
 
     public ResponseEntity<Object> projectToSupervised(Integer supervisedId, Project project) {
         Supervised supervised = supervisedRepository.findById(supervisedId).get();
-        supervised.getProjects().add(project);
-        return new ResponseEntity<>(project, HttpStatus.OK);
+
+        project.setSupervised(supervised);
+        Project project1 = projectRepository.save(project);
+        supervised.getProjects().add(project1);
+        supervisedRepository.save(supervised);
+        return new ResponseEntity<>(project,HttpStatus.OK);
     }
 
     //comparator for deadlines

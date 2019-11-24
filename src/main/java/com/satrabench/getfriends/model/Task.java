@@ -8,6 +8,9 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
+import java.text.SimpleDateFormat;
+import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.Date;
 
 @Entity
@@ -32,7 +35,9 @@ public class Task {
     @Column( length = 100000 )
     private String photo;
 
+
     private Date deadline;
+
     @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "project_id")
     @JsonIgnore
