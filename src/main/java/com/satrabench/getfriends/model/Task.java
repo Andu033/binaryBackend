@@ -38,8 +38,6 @@ public class Task {
 
     private Date deadline;
 
-
-
     @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "project_id")
     @JsonIgnore

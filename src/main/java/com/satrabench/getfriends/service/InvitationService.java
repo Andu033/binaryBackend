@@ -46,11 +46,21 @@ public class InvitationService {
         i.setStatus("accepted");
 
         User user = userRepository.findById(i.getIdUser()); //supervised to user
-        Supervised supervised = supervisedRepository.findById(i.getIdSuper()).get();
+        Supervised supervised = supervisedRepository.findById(i.getIdSuper());
 
-        supervised.setUser(user);
         Supervised supervised1 = supervisedRepository.save(supervised);
         user.getIncidents().add(supervised1);
+        userRepository.save(user);
+
+        return new ResponseEntity<Object>(i, HttpStatus.OK);
+    }
+
+    public ResponseEntity<Object> deny(Integer idInvitation) {
+        Invitation i = invitationRepository.findById(idInvitation).get();
+        i.setStatus("denied");
+
+        User user = userRepository.findById(i.getIdUser());
+        user.getInvitations().remove(i);
         userRepository.save(user);
 
         return new ResponseEntity<Object>(i, HttpStatus.OK);

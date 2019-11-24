@@ -1,9 +1,6 @@
 package com.satrabench.getfriends.controller;
 
-import com.satrabench.getfriends.model.Invitation;
-import com.satrabench.getfriends.model.Project;
 import com.satrabench.getfriends.service.InvitationService;
-import com.satrabench.getfriends.service.ProjectService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -35,6 +32,8 @@ public class InvitationController {
 
     @GetMapping("/invite/deny")
     public ResponseEntity<Object> deny(@RequestParam(required=false) Integer idInvitation ) {
-        return invitationService.accept(idInvitation);
+        return invitationService.deny(idInvitation);
     }
+
+
 }

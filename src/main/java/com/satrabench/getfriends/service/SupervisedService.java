@@ -45,38 +45,21 @@ public class SupervisedService {
         return new ResponseEntity<>(userRepository.findById(id), HttpStatus.OK);
     }
 
-    public ResponseEntity<Object> delete(int id) {
-        supervisedRepository.deleteById(id);
-        return new ResponseEntity<>("ok", HttpStatus.OK);
-    }
-
-    public ResponseEntity<Object> invalidate(int supervisedId) {
-        Supervised supervised = supervisedRepository.findById(supervisedId).get();
-        supervisedRepository.save(supervised);
-        return new ResponseEntity<>("saved", HttpStatus.OK);
-    }
-
-    public ResponseEntity<Object> ongoing(int supervisedId) {
-        Supervised supervised = supervisedRepository.findById(supervisedId).get();
-        supervisedRepository.save(supervised);
-        return new ResponseEntity<>("saved", HttpStatus.OK);
-    }
-
     public ResponseEntity<Object> create(Supervised supervised) {
         Supervised supervised1 = supervisedRepository.save(supervised);
         return new ResponseEntity<>(supervised1, HttpStatus.OK);
     }
 
     public ResponseEntity<Object> getAllTasks(int id) {
-        Supervised supervised = supervisedRepository.findById(id).get();
-        List<Task> alltasks = new ArrayList<Task>();
+        Supervised supervised = supervisedRepository.findById(id);
+        List<Task> allTasks = new ArrayList<Task>();
         List<Project> projects = supervised.getProjects();
 
         for (Project project : projects) {
-            alltasks.addAll(project.getProjects());
+            allTasks.addAll(project.getProjects());
         }
-        alltasks.sort(new Sortbydeadline());
-        return new ResponseEntity<>(alltasks, HttpStatus.OK);
+        allTasks.sort(new Sortbydeadline());
+        return new ResponseEntity<>(allTasks, HttpStatus.OK);
     }
 
     public ResponseEntity<Object> projectToSupervised(Integer supervisedId, Project project) {
@@ -95,5 +78,15 @@ public class SupervisedService {
             return a.getDeadline().compareTo(b.getDeadline());
         }
     }
+
+    public ResponseEntity<Object> addBlacklist(Integer id, String site) {
+        Supervised user = supervisedRepository.findById(id).get();
+        user.getBlackSiteList().add(new BlackSite(site));
+        supervisedRepository.save(user);
+
+        return new ResponseEntity<Object>(user, HttpStatus.OK);
+    }
+
+
 }
 

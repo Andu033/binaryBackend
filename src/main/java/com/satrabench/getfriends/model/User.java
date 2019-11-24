@@ -25,6 +25,7 @@ public class User {
 	private String password;
 	private boolean supervisor = true;
 	private boolean supervised = false;
+
 	@OneToMany(mappedBy = "user",
 			cascade = CascadeType.PERSIST,
 			orphanRemoval = true)
@@ -38,6 +39,5 @@ public class User {
 			cascade = CascadeType.PERSIST,
 			orphanRemoval = true)
 	private List<Invitation> invitations = new ArrayList<>();
-
-
 }
+

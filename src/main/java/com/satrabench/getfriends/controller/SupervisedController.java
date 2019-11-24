@@ -41,4 +41,8 @@ public class SupervisedController {
     @GetMapping("/addProject")
     public ResponseEntity<Object> projectToSupervised(@RequestParam Integer supervisedId, @RequestBody Project project ) {return supervisedService.projectToSupervised(supervisedId, project); }
 
+    @PostMapping("/addBlacklist")
+    public ResponseEntity<Object> addBlacklist(@RequestParam Integer id, @RequestParam String siteName) {
+        return supervisedService.addBlacklist(id, siteName);
+    }
 }
