@@ -31,8 +31,6 @@ public class Supervised {
             orphanRemoval = true)
     private List<Project> projects = new ArrayList<Project>();
 
-
-
     @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "user_id")
     @JsonIgnore
